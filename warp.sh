@@ -304,7 +304,7 @@ Print_Delimiter() {
 }
 
 Install_wgcf() {
-    curl -fsSL raw.githubusercontent.com/mengzixi/warp/main/wgcf.sh | bash
+    #curl -fsSL raw.githubusercontent.com/mengzixi/warp/main/wgcf.sh | bash
 }
 
 Uninstall_wgcf() {
