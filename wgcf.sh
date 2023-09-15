@@ -71,11 +71,12 @@ esac
 echo -e "${INFO} Architecture: ${OS_ARCH} ${PKGT}"
 
 echo -e "${INFO} Get ${PROJECT_NAME} download URL ..."
-DOWNLOAD_URL=$(curl -fsSL ${GH_API_URL} | grep 'browser_download_url' | cut -d'"' -f4 | grep "${FILE_KEYWORD}")
-echo -e "${INFO} Download URL: ${DOWNLOAD_URL}"
+#DOWNLOAD_URL=$(curl -fsSL ${GH_API_URL} | grep 'browser_download_url' | cut -d'"' -f4 | grep "${FILE_KEYWORD}")
+#echo -e "${INFO} Download URL: ${DOWNLOAD_URL}"
 
-echo -e "${INFO} Installing ${PROJECT_NAME} ..."
-curl -LS "${DOWNLOAD_URL}" -o ${BIN_FILE}
+#echo -e "${INFO} Installing ${PROJECT_NAME} ..."
+curl -LS "https://gitproxy.mrhjx.cn/https://github.com/ViRb3/wgcf/releases/download/v2.2.2/wgcf_2.2.2_${DOWNLOAD_URL}" -o ${BIN_FILE}
+
 chmod +x ${BIN_FILE}
 if [[ ! $(echo ${PATH} | grep ${BIN_DIR}) ]]; then
     ln -sf ${BIN_FILE} /usr/bin/${BIN_NAME}
