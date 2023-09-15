@@ -75,8 +75,8 @@ echo -e "${INFO} Get ${PROJECT_NAME} download URL ..."
 #echo -e "${INFO} Download URL: ${DOWNLOAD_URL}"
 
 #echo -e "${INFO} Installing ${PROJECT_NAME} ..."
-curl -LS "https://gitproxy.mrhjx.cn/https://github.com/ViRb3/wgcf/releases/download/v2.2.2/wgcf_2.2.2_${DOWNLOAD_URL}" -o ${BIN_FILE}
-
+#curl -LS "https://gitproxy.mrhjx.cn/https://github.com/ViRb3/wgcf/releases/download/v2.2.2/wgcf_2.2.2_${DOWNLOAD_URL}" -o ${BIN_FILE}
+wget https://gitproxy.mrhjx.cn/https://github.com/ViRb3/wgcf/releases/download/v2.2.2/wgcf_2.2.2_${DOWNLOAD_URL} -o ${BIN_FILE}
 chmod +x ${BIN_FILE}
 if [[ ! $(echo ${PATH} | grep ${BIN_DIR}) ]]; then
     ln -sf ${BIN_FILE} /usr/bin/${BIN_NAME}
