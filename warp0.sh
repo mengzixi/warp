@@ -418,18 +418,6 @@ Install_WireGuardTools() {
     esac
 }
 
-Install_WireGuardGo() {
-    case ${SysInfo_Virt} in
-    openvz | lxc*)
-        curl -fsSL raw.githubusercontent.com/P3TERX/script/master/wireguard-go.sh | bash
-        ;;
-    *)
-        if [[ ${SysInfo_Kernel_Ver_major} -lt 5 || ${SysInfo_Kernel_Ver_minor} -lt 6 ]]; then
-            curl -fsSL raw.githubusercontent.com/P3TERX/script/master/wireguard-go.sh | bash
-        fi
-        ;;
-    esac
-}
 
 Check_WireGuard() {
     WireGuard_Status=$(systemctl is-active wg-quick@${WireGuard_Interface})
@@ -441,7 +429,7 @@ Install_WireGuard() {
     Check_WireGuard
     if [[ ${WireGuard_SelfStart} != enabled || ${WireGuard_Status} != active ]]; then
         Install_WireGuardTools
-        Install_WireGuardGo
+        
     else
         log INFO "WireGuard is installed and running."
     fi
