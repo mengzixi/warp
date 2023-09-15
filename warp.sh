@@ -304,7 +304,7 @@ Print_Delimiter() {
 }
 
 Install_wgcf() {
-    curl -fsSL raw.githubusercontent.com/P3TERX/script/master/wgcf.sh | bash
+    curl -fsSL raw.githubusercontent.com/mengzixi/warp/main/wgcf.sh | bash
 }
 
 Uninstall_wgcf() {
@@ -1145,7 +1145,7 @@ Print_Usage() {
 Cloudflare WARP Installer [${shVersion}]
 
 USAGE:
-    bash <(curl -fsSL raw.githubusercontent.com/P3TERX/warp.sh/main/warp.sh) [SUBCOMMAND]
+    bash <(curl -fsSL raw.githubusercontent.com/mengzixi/warp/main/warp.sh) [SUBCOMMAND]
 
 SUBCOMMANDS:
     install         Install Cloudflare WARP Official Linux Client
