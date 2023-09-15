@@ -303,9 +303,6 @@ Print_Delimiter() {
     echo
 }
 
-Install_wgcf() {
-    #curl -fsSL raw.githubusercontent.com/mengzixi/warp/main/wgcf.sh | bash
-}
 
 Uninstall_wgcf() {
     rm -f /usr/local/bin/wgcf
@@ -313,7 +310,6 @@ Uninstall_wgcf() {
 
 Register_WARP_Account() {
     while [[ ! -f wgcf-account.toml ]]; do
-        Install_wgcf
         log INFO "Cloudflare WARP Account registration in progress..."
         yes | wgcf register
         sleep 5
